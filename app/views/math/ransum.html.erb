@@ -1,0 +1,15 @@
+<ht> Random Sum Calculator</ht>
+<form method ='post' action = '/math/ransum'> 
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<input type='text' name = 'count' />
+<input type ='text' name = 'range' />
+<input type ='submit' name = 'Compute Sum' />
+</form>
+
+<% if @numbers %>
+    <ul> <% @numbers.each do |n| %>
+        <li> <%=n%> </li>
+        <% end %>
+    </ul>
+    <%= @sum %>
+<% end %>
